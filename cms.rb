@@ -129,12 +129,16 @@ def login
   session[:login] = params[:username].strip
 end
 
+def cleaned_filename
+  File.basename(params[:file_name].strip)
+end
+
 def img_path
-  File.join(images_path, params[:file_name].strip)
+  File.join(images_path, cleaned_filename)
 end
 
 def doc_path
-  File.join(docs_path, params[:file_name].strip)
+  File.join(docs_path, cleaned_filename)
 end
 
 def new_basename
