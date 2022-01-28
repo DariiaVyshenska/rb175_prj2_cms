@@ -1,0 +1,17 @@
+<form action="/signup" method="POST">
+  <div>
+    <label for="username">New username:</label>
+    <input type="text" name="username" id="username" value=<%= params[:username] %> >
+  </div>
+  <br>
+  <div>
+    <label for="password1">Password:</label>
+    <input type="password" name="password1" id="password1">
+  </div>
+  <div>
+    <label for="password2">Repeat Password:</label>
+    <input type="password" name="password2" id="password2">
+  </div>
+  <br>
+  <button type="submit">Sign up</button>
+</form>

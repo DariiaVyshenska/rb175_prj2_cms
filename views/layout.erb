@@ -1,0 +1,25 @@
+
+<% if session[:msg] %>
+  <p></p>
+<% end %>
+
+
+<!doctype html>
+<html lang="en-US">
+  <title>CMS</title>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=PT+Sans">
+    <link rel="stylesheet" href="/stylesheets/cms.css" type="text/css">
+  </head>
+  <body>
+    <% if session[:msg] %>
+      <div class="message">
+        <p><%= session.delete(:msg) %></p>
+      </div>
+    <% end %>
+    <main>
+      <%== yield %>
+    </main>
+  </body>
+</html>

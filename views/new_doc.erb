@@ -1,0 +1,14 @@
+<form action="/docs/new" method="POST">
+  <h2>Add a new document</h2>
+  <label for="new_doc">Add a name:</label>
+  <div>
+    <input type="text" name="new_basename" id="new_doc">.<input type="text" name="new_extension" id="new_doc" size="4">
+  </div>
+
+  <br>
+  <label for="file_text">Add content:</label>
+  <div>
+    <textarea id="file_text" name="file_text" rows="10" cols="50"><%= params[:file_text] %></textarea>
+  </div>
+  <button type="submit">Create</button>
+</form>

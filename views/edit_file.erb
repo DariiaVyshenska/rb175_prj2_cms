@@ -1,0 +1,13 @@
+<h2>Current File: <%= @doc.name %></h2>
+<form action "/<%= @doc.name %>/edit" method="post">
+  <label for="rename_file">Edit name:</label>
+  <div>
+    <input type="text" name="new_basename" id="rename_file" value=<%= params[:new_basename] || @doc.basename %>><%= @doc.extension %>
+  </div>
+  <br>
+  <label for="new_file_text">Edit content:</label>
+  <div>
+    <textarea id="new_file_text" name="new_file_text" rows="10" cols="50"><%= params[:new_file_text] || @doc.content %></textarea>
+  </div>
+  <input id="new_file_text" type="submit" value="Save Changes">
+</form>

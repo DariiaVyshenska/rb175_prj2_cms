@@ -1,0 +1,6 @@
+This is the file 'changes.txt'
+This content may change in the future.
+This file has no goal except to be an exercise tool.
+asaf
+  
+    

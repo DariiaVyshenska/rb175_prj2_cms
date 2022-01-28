@@ -1,5 +1,44 @@
+<h2>Documents</h2>
 <ul>
-  <% @file_names.sort.each do |file_name| %>
-    <li><%= file_name %></li>
+  <% @docs.each do |doc| %>
+    <li>
+      <a href="/docs/<%= doc.name %>"><%= doc.name %></a>
+      (<a href="/docs/<%= doc.name %>/edit">edit</a>)
+      <form class="inline" method="post" action="/docs/<%= doc.name %>/delete">
+        <button type="submit">delete</button>
+      </form>
+      <form class="inline" method="post" action="/docs/<%= doc.name %>/duplicate">
+        <button type="submit">create a copy</button>
+      </form>
+    </li>
   <% end %>
 </ul>
+<p><a href='/docs/new'>New Document</a></p>
+
+<h2>Images</h2>
+<ul>
+  <% @images.each do |img| %>
+    <li>
+      <a href="/<%= img.relative_path %>"><%= img.name %></a>
+      (<a href="/images/<%= img.name %>/edit">edit</a>)
+      <form class="inline" method="post" action="images/<%= img.name %>/delete">
+        <button type="submit">delete</button>
+      </form>
+      <form class="inline" method="post" action="images/<%= img.name %>/duplicate">
+        <button type="submit">create a copy</button>
+      </form>
+    </li>
+  <% end %>
+</ul>
+<p><a href='images/new'>New Image</a></p>
+
+<% if logged_in? %>
+  <form class="inline" method='post' action='/signout'>
+    <p class="user-status">
+      <em>Signed in as <%= session[:login] %>.</em>
+      <button type="submit">Sign Out</button>
+    </p>
+  </form>
+<% else %>
+  <p class="user-status"><a href="/users/signin">Sign In</a> or <a href="/signup">Sign Up</a></p>
+<% end %>

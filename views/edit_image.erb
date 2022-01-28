@@ -1,0 +1,9 @@
+<h2>Current File: <%= @img.name %></h2>
+<form action "/images/<%= @img.name %>/edit" method="post">
+  <label for="rename_file">Edit name:</label>
+  <div>
+    <input type="text" name="new_basename" id="rename_file" value=<%= @params[:new_basename] || @img.basename %> ><%= @img.extension %>
+  </div>
+  <br>
+  <input id="rename_file" type="submit" value="Save Changes">
+</form>

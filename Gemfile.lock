@@ -1,13 +1,19 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    bcrypt (3.1.16)
     erubis (2.7.0)
+    fileutils (1.6.0)
+    minitest (5.15.0)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
+    redcarpet (3.5.1)
     ruby2_keywords (0.0.5)
     sinatra (2.1.0)
       mustermann (~> 1.0)
@@ -21,17 +27,24 @@ GEM
       sinatra (= 2.1.0)
       tilt (~> 2.0)
     tilt (2.0.10)
+    yaml (0.2.0)
 
 PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt
   erubis
+  fileutils
+  minitest
+  rack-test
+  redcarpet
   sinatra (~> 2.1.0)
   sinatra-contrib
+  yaml
 
 RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.31
+   2.3.3
